@@ -15,3 +15,5 @@ styles/build.css
 cypress.env.json
 cypress/logs/
 cypress/screenshots/
+cache
+public
