@@ -1,0 +1,363 @@
+@web-font-path: "https://fonts.googleapis.com/css?family=Muli&family=PT+Serif:300,400,700";
+
+.web-font(@path) {
+  @import url("@{path}");
+}
+.web-font(@web-font-path);
+
+html, body {
+	font-family:"Muli", sans-serif;
+	font-size:1em;/* em is more accessible than hard coded px sizes, this undoes bootstraps hard coded size*/
+	}
+
+img {max-width:100%;} /*makes all images responsive with container width*/
+
+/* base link colors */
+a, a:hover, a:focus {
+	color:#e05c3f;
+	}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+     font-family: "PT Serif", serif;
+     font-weight: 700;
+    }
+
+
+
+/* -----HEADER------*/
+
+/* limiting the width of the header content */
+.container-fluid {
+	max-width:1500px;
+	}
+
+
+/* changing the background color on the header area*/
+.navbar-default, .header_view {
+	background-color: #b2c249;
+	border-color:#b2c249;
+	}
+
+/*making links in the header area white*/
+.navbar-default .navbar-brand, .header_view .navbar-brand, .navbar-default .nav>li>a, .header_view .nav>li>a {
+	color:white;
+}
+
+/* making links in the header white and underline on hover and focus with orange background color*/
+.navbar-default .nav>li>a:hover, .navbar-default .nav>li>a:focus, .navbar-default .nav>li>a:active, .header_view .nav>li>a:hover, .header_view .nav>li>a:focus, .header_view .nav>li>a:active {
+	color:white;
+	text-decoration:underline;
+	background-color: #e05c3f;
+	}
+
+/*dropdown menu link color*/
+.dropdown-menu > li > a {
+    color: #e05c3f;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    text-decoration: underline;
+    color: #fff;
+    background-color: #e05c3f;
+}
+
+
+/*hamburger menu*/
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .header_view .navbar-toggle:hover, .header_view .navbar-toggle:focus {
+     background-color:#e05c3f;
+}
+
+.navbar-default .navbar-toggle, .header_view .navbar-toggle {
+     border-color:white
+}
+.navbar-default .navbar-toggle .icon-bar, .header_view .navbar-toggle .icon-bar {
+     background-color:white;
+}
+
+/* nav menu item with dropdown - top level item color*/
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus, .header_view .navbar-nav>.open>a, .header_view .navbar-nav>.open>a:hover, .header_view .navbar-nav>.open>a:focus {
+	background-color:#e05c3f;
+	color:white;
+	text-decoration:underline;
+	}
+
+
+
+
+
+
+/* -----LOGO------*/
+/* undoing fixed height on the logo*/
+.navbar-brand {
+	height:auto;
+	}
+
+.navbar-brand-logo img {
+	max-height: 125px;
+}
+
+/*adjust publication logo size */
+.media-left img {max-width:200px;}
+
+.navbar-brand {padding:1em;}
+
+/* floating register/login/admin links in upper right to the right so they are inline instead of above the logo
+header .container-fluid:first-child {
+	float:right;
+	}
+*/
+
+
+
+
+
+
+/* -----BUTTONS------*/
+
+/* button styles*/
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:focus, .btn-primary.focus, .btn-default,.btn-default:hover {
+	background-color:#e05c3f!important;
+	border-color:#fff;
+	color: #fff;
+}
+
+.btn-primary:hover, .btn-default:hover {
+	text-decoration:underline;
+	}
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:focus, .btn-primary.focus {
+	background-color:#e05c3f;
+	border-color:#fff;
+}
+
+.btn-primary:hover {text-decoration:underline;}
+
+
+/* buttons under each issue on admin home page*/
+.media-body .nav-pills>li>a {
+	background-color:#e05c3f;
+	color:white;
+	}
+
+.media-body .nav>li>a:hover, .nav>li>a:focus {
+	background-color:#e05c3f;
+	color:white;
+	text-decoration:underline;
+	}
+
+/*search button text color*/
+.btn-default, .pkp_block.block_make_submission a {
+    color: #fff;
+}
+
+/*making search button border orange*/
+.navbar-form .btn-default {
+     border-color:#e05c3f;
+}
+
+
+
+/*----SIDEBAR---- */
+aside#sidebar {
+	padding-top:none;
+	}
+
+
+
+
+
+
+/* -----FOOTER------*/
+/* Make footer green and links white
+footer[role="contentinfo"]{
+	background-color: #b2c249;
+	}
+
+footer p a {
+	color:white;
+	}
+*/
+
+
+footer p{
+	text-align:center;
+	}
+
+/*hide ojs logo*/
+div[role=complementary] {display:none;}
+
+
+/* fixing column width for footer now that the ojs logo is hidden */
+footer .col-md-10, footer .col-sm-2 {
+    width: 100%;
+}
+
+
+
+
+/*improving mobile layout for admin home page*/
+
+.media-left, .media-right, .media-body {
+	display:block;
+	margin-bottom:1em;
+}
+
+.media-body {width:100%;}
+
+/* Begin styling specific to display of HTML article galleys */
+
+p._020styles_Byline {
+	font-style:italic;
+	margin-bottom:15px;
+}
+p._020styles_BylineBottom {
+	font-style:italic;
+	margin-top: 20px;
+}
+p._020styles_LOChead1 {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+p._020styles_LOChead2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 33px;
+}
+p._020styles_LCC_LCC1 {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+p._020styles_LCC_LCC2, p._020styles_LCC_LCC3, p._020styles_LCC_LCC4, p._020styles_LCC_LCC5, p._020styles_LCC_LCC6,p._020styles_LCC_LCC7,p._020styles_LCC_LCC8,p._020styles_LCC_LCC9,p._020styles_LCC_LCC10,p._020styles_LCC_LCC11 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+p.ProfDevDates {
+	margin-bottom: 0px;
+}
+p.ProfDevPrice {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+p._020styles_WorksCited {
+	margin-left: 20px;
+	text-indent:-20px;
+}
+p._020styles_TitleNum {
+	margin-bottom: 0px;
+}
+/*caption text for images and tables*/
+p ._020styles_Caption {
+     font-size: 0.8em;
+     text-align: center;
+}
+/*article subtitles*/
+p._020styles_H0sub {
+     font-family: “PT Sans”;
+     font-weight: 600;
+     font-size: 20px;
+}
+/*behind abstract text*/
+p._020styles_Abstract {
+     background-color: rgba(178, 194, 73, .4);
+     border-style: solid;
+     border-width: 15px;
+     border-color: rgba(178, 194, 73, 0);
+     border-radius: 10px;
+}
+/*data at the beginning of book reviews*/
+p.Bodies_ReviewBook {
+     margin: 20px;
+     font-size: small;
+}
+/*bylines at the ends of book reviews*/
+p.Bodies_ReviewAuthor {
+     text-align: right;
+     margin: 0px;
+}
+
+/*superscripts the endnote markers in articles*/
+span.CharOverride-2 {
+     vertical-align: super;
+     font-size: 69%;
+}
+
+/*indent endnotes while keeping the endnote numbers flush*/
+p._020styles_Endnotes {
+     text-indent: 10px;
+}
+p._020styles_Endnotes::first-line {
+     text-indent: 0px;
+}
+
+span.abstract {
+     font-weight: bold;
+}
+span.Italic {
+	font-style:italic;
+}
+
+table.Basic-Table {
+	border-collapse:collapse;
+	border-color:#000000;
+	border-style:solid;
+	border-width:1px;
+	margin-bottom:8px;
+	margin-top:8px;
+}
+td.Basic-Table {
+	border-left-width:1px;
+	border-left-style:solid;
+	border-left-color:#000000;
+	border-top-width:1px;
+	border-top-style:solid;
+	border-top-color:#000000;
+	border-right-width:1px;
+	border-right-style:solid;
+	border-right-color:#000000;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#000000;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:4px;
+	padding-right:4px;
+	vertical-align:top;
+}
+thead {
+	font-weight:bold;
+}
+
+
+
+@media (min-width: 768px){
+
+     /*margin on navbar for larger screens - used on publications*/
+     	.navbar-nav {
+        	 margin: 46px -15px 0px 0px;
+     	}
+
+	/*moving search menu to the right for ipad and larger*/
+		 .pull-md-right {
+			  float:right;
+		 }
+
+	/* removing border radius on header */
+		.navbar, .header_view {
+			border-radius:0;
+		}
+
+	/*adjusting admin home page journal buttons */
+		.nav-pills>li+li {
+			margin-left:2px;
+			margin-top:0px;
+		}
+
+	/*adjusting admin home page journal logos*/
+		.media-left, .media-right, .media-body {
+			display:table-cell;
+			margin-bottom:0em;
+	}
+
+	}

@@ -9,7 +9,7 @@
   *
   * Upgrade descriptor file.
   *
-  -->
+-->
 
 <install version="3.3.0.8">
 	<code function="checkPhpVersion" />
