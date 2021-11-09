@@ -3,7 +3,6 @@
 temp
 /files
 /plugins/paymethod/paypal/vendor/
-.htaccess
 .project
 .buildpath
 .settings
@@ -17,3 +16,4 @@ cypress/logs/
 cypress/screenshots/
 cache
 public
+config.inc.php
