@@ -17,3 +17,4 @@ cypress/screenshots/
 cache
 public
 config.inc.php
+plugins/themes/bootstrap3
