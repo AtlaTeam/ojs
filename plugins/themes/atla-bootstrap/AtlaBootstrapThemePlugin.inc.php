@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2021 Atla
  *
- * @brief Atla Booststrap3 child theme.
+ * @brief Atla Bootstrap3 child theme.
  */
 
 import('lib.pkp.classes.plugins.ThemePlugin');
@@ -19,8 +19,8 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
-		$this->setParent('bootstrapthemeplugin');
-		$this->modifyStyle('stylesheet', ['addLess' => ['styles/index.less']]);
+		$this->setParent('bootstrapthreethemeplugin');
+		$this->addStyle('stylesheet', 'styles/index.less');
 	}
 
 	/**

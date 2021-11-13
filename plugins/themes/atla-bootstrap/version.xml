@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/themes/atla-bootstrap/version.xml
+  *
+  * Copyright (c) 2014-2017 Atla
+  *
+  * Plugin version information.
+  -->
+
 <version>
 	<!-- The application value should match the directory name of the theme -->
-	<application>atla-bootstrap-theme</application>
+	<application>atla-bootstrap</application>
 	<type>plugins.themes</type>
 	<release>1.0.0.0</release>
 	<date>2021-11-12</date>
