@@ -20,7 +20,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 		$this->setParent('bootstrapthreethemeplugin');
-		$this->addStyle('stylesheet', 'styles/index.less');
+		$this->addStyle('child-stylesheet', 'styles/index.less');
 	}
 
 	/**
