@@ -20,7 +20,15 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 		$this->setParent('bootstrapthreethemeplugin');
-		$this->addStyle('child-stylesheet', 'styles/index.less');
+
+		// Override default styles for the "default" subtheme.
+		$subtheme = $this->parent->getOption('bootstrapTheme');
+		if ($subtheme == 'bootstrap3') {
+			$this->addStyle('child-stylesheet', 'styles/index.less');
+		}
+
+		// Special handling for CookiePro elements on all subthemes.
+		$this->modifyStyle('stylesheet', ['addLess' => ['styles/cookiepro.less']]);
 	}
 
 	/**
