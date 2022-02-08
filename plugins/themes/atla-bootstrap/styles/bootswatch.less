@@ -85,7 +85,27 @@ h2.title {
 	text-decoration:underline;
 	}
 
+/* article header link color*/
+.pkp_page_article.pkp_op_view .header_view a{
+     color:#ffffff;
+}
 
+/* add back arrow to article header link */
+.pkp_page_article.pkp_op_view .header_view a.title:before {
+    display: inline-block;
+    font: normal normal normal 20px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    content: "\f060\2001";
+}
+
+
+/* for issues with the Masthead, resizing logo*/
+.page_issue #_idContainer002 {
+     max-width: 300px;
+}
 
 
 
