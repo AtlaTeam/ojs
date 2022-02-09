@@ -23,6 +23,7 @@
 	<script type="text/javascript">
 		function OptanonWrapper() { }
 	</script>
+     <script src="https://kit.fontawesome.com/1c03965ab2.js" crossorigin="anonymous"></script>
 	{load_header context="frontend"}
 	{load_stylesheet context="frontend"}
 </head>
