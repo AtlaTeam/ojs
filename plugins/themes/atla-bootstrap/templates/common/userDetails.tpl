@@ -23,6 +23,8 @@
  *   $extraContentSectionUnfolded: Whether or not the extra content section is unfolded by default
  *}
 
+{$extraContentSectionUnfolded = true}
+
 {fbvFormArea id="userDetails"}
 	{fbvFormSection title="user.name"}
 		{fbvElement type="text" label="user.givenName" multilingual="true" name="givenName" id="givenName" value=$givenName maxlength="255" inline=true size=$fbvStyles.size.MEDIUM required="true"}
