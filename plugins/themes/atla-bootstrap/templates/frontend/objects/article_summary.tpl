@@ -74,7 +74,7 @@
 	{/if}
 
 	{if !$hideGalleys}
-		<ul class="galleys_links">
+		<div class="btn-group" role="group">
 			{foreach from=$article->getGalleys() item=galley}
 				{if $primaryGenreIds}
 					{assign var="file" value=$galley->getFile()}
@@ -82,15 +82,13 @@
 						{continue}
 					{/if}
 				{/if}
-				<li>
-					{assign var="hasArticleAccess" value=$hasAccess}
-					{if $currentContext->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN}
-						{assign var="hasArticleAccess" value=1}
-					{/if}
-					{include file="frontend/objects/galley_link.tpl" parent=$article labelledBy="article-{$article->getId()}" hasAccess=$hasArticleAccess purchaseFee=$currentJournal->getData('purchaseArticleFee') purchaseCurrency=$currentJournal->getData('currency')}
-				</li>
+				{assign var="hasArticleAccess" value=$hasAccess}
+				{if $currentContext->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_OPEN || $publication->getData('accessStatus') == $smarty.const.ARTICLE_ACCESS_OPEN}
+					{assign var="hasArticleAccess" value=1}
+				{/if}
+				{include file="frontend/objects/galley_link.tpl" parent=$article labelledBy="article-{$article->getId()}" hasAccess=$hasArticleAccess}
 			{/foreach}
-		</ul>
+		</div>
 	{/if}
 
 	{call_hook name="Templates::Issue::Issue::Article"}
