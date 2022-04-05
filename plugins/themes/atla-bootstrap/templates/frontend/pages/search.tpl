@@ -22,12 +22,12 @@
 	{assign var="heading" value="h2"}
 {/if}
 
-<div class="page page_search">
+<div id="main-content" class="page page_search">
 
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="common.search"}
-	<h1>
-		{translate key="common.search"}
-	</h1>
+	<div class="page-header">
+		<h1>{translate key="common.search"}</h1>
+	</div>
 
 	{capture name="searchFormUrl"}{url escape=false}{/capture}
 	{assign var=formUrlParameters value=[]}{* Prevent Smarty warning *}
@@ -63,6 +63,9 @@
 				</div>
 			</div>
 			<div class="author">
+				<legend>
+					{translate key="search.author"}
+				</legend>
 				<label class="label" for="authors">
 					{translate key="search.author"}
 				</label>
@@ -70,7 +73,6 @@
 					<input type="text" id="authors" name="authors" value="{$authors|escape}">
 				{/block}
 			</div>
-			{call_hook name="Templates::Search::SearchResults::AdditionalFilters"}
 		</fieldset>
 
 		<div class="submit">
@@ -95,13 +97,11 @@
 	{/if}
 
 	{* Search results, finally! *}
-	<ul class="search_results">
+	<div class="search-results">
 		{iterate from=results item=result}
-			<li>
 				{include file="frontend/objects/article_summary.tpl" article=$result.publishedSubmission journal=$result.journal showDatePublished=true hideGalleys=true heading="h3"}
-			</li>
 		{/iterate}
-	</ul>
+	</div>
 
 	{* No results found *}
 	{if $results->wasEmpty()}
