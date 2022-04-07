@@ -32,52 +32,63 @@
 	{capture name="searchFormUrl"}{url escape=false}{/capture}
 	{assign var=formUrlParameters value=[]}{* Prevent Smarty warning *}
 	{$smarty.capture.searchFormUrl|parse_url:$smarty.const.PHP_URL_QUERY|parse_str:$formUrlParameters}
-	<form class="cmp_form" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
+	<form class="search-form" method="get" action="{$smarty.capture.searchFormUrl|strtok:"?"|escape}">
 		{foreach from=$formUrlParameters key=paramKey item=paramValue}
 			<input type="hidden" name="{$paramKey|escape}" value="{$paramValue|escape}"/>
 		{/foreach}
-
-		{* Repeat the label text just so that screen readers have a clear
-		   label/input relationship *}
-		<div class="search_input">
-			<label class="pkp_screen_reader" for="query">
+		<div class="form-group">
+			{* Repeat the label text just so that screen readers have a clear
+			   label/input relationship *}
+			<label class="sr-only" for="query">
 				{translate key="search.searchFor"}
 			</label>
-			{block name=searchQuery}
-				<input type="text" id="query" name="query" value="{$query|escape}" class="query" placeholder="{translate|escape key="common.search"}">
-			{/block}
-		</div>
 
-		<fieldset class="search_advanced">
+			<div class="input-group">
+				<input type="search" id="query" name="query" value="{$query|escape}" class="query form-control" placeholder="{translate key="common.search"}">
+				<span class="input-group-btn">
+					<input type="submit" value="{translate key="common.search"}" class="btn btn-default">
+				</span>
+			</div>
+		</div>	
+
+		<fieldset class="search-advanced">
 			<legend>
 				{translate key="search.advancedFilters"}
 			</legend>
-			<div class="date_range">
-				<div class="from">
-					{capture assign="dateFromLegend"}{translate key="search.dateFrom"}{/capture}
-					{html_select_date_a11y legend=$dateFromLegend prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd}
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="dateFromYear">
+							{translate key="search.dateFrom"}
+						</label>
+						<div class="form-inline">
+							<div class="form-group">
+								{html_select_date prefix="dateFrom" time=$dateFrom start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="dateToYear">
+							{translate key="search.dateTo"}
+						</label>
+						<div class="form-inline">
+							<div class="form-group">
+								{html_select_date prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd year_empty="" month_empty="" day_empty="" field_order="YMD"}
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="to">
-					{capture assign="dateFromTo"}{translate key="search.dateTo"}{/capture}
-					{html_select_date_a11y legend=$dateFromTo prefix="dateTo" time=$dateTo start_year=$yearStart end_year=$yearEnd}
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="authors">
+							{translate key="search.author"}
+						</label>
+						<input class="form-control" type="text" for="authors" name="authors" value="{$authors|escape}">
+					</div>
 				</div>
-			</div>
-			<div class="author">
-				<legend>
-					{translate key="search.author"}
-				</legend>
-				<label class="label" for="authors">
-					{translate key="search.author"}
-				</label>
-				{block name=searchAuthors}
-					<input type="text" id="authors" name="authors" value="{$authors|escape}">
-				{/block}
 			</div>
 		</fieldset>
 
-		<div class="submit">
-			<button class="submit" type="submit">{translate key="common.search"}</button>
-		</div>
 	</form>
 
 	{call_hook name="Templates::Search::SearchResults::PreResults"}
