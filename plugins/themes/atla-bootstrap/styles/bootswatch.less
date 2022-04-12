@@ -242,13 +242,26 @@ footer .col-md-10, footer .col-sm-2 {
 
 /* Begin styling specific to display of HTML article galleys */
 
+.Bold {font-weight:bold;}
+.Italic {font-style:italic;}
+
+/*this styles the h2s*/
+._020styles_H1 {
+     font-size: 25px;
+}
+
+/*this styles the h3s*/
+h3._020styles_h3-headings, ._020styles_H2 {
+     font-size:20px;
+}
+
 p._020styles_Byline {
 	font-style:italic;
 	margin-bottom:15px;
 }
 p._020styles_BylineBottom {
 	font-style:italic;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 p._020styles_LOChead1 {
 	margin-top: 20px;
@@ -257,7 +270,7 @@ p._020styles_LOChead1 {
 p._020styles_LOChead2 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	margin-left: 33px;
+	margin-left: 59px;
 }
 p._020styles_LCC_LCC1 {
 	margin-top: 10px;
@@ -267,6 +280,35 @@ p._020styles_LCC_LCC2, p._020styles_LCC_LCC3, p._020styles_LCC_LCC4, p._020style
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+/* indenting the classifications */
+._020styles_LCC_LCC1{
+     margin-left:8em;
+}
+
+._020styles_LCC_LCC2{
+     margin-left:9em;
+}
+
+._020styles_LCC_LCC3{
+     margin-left:10em;
+}
+
+._020styles_LCC_LCC4{
+     margin-left:11em;
+}
+
+._020styles_LCC_LCC5{
+     margin-left:12em;
+}
+
+._020styles_LCC_LCC6{
+     margin-left:13em;
+}
+
+._020styles_LCC_LCC7{
+     margin-left:14em;
+}
+
 p.ProfDevDates {
 	margin-bottom: 0px;
 }
@@ -282,10 +324,11 @@ p._020styles_TitleNum {
 	margin-bottom: 0px;
 }
 /*caption text for images and tables*/
-p ._020styles_Caption {
-     font-size: 0.8em;
-     text-align: center;
+p._020styles_Caption {
+     font-size:.85em;
+     line-height:1.15em;
 }
+
 /*article subtitles*/
 p._020styles_H0sub {
      font-family: “PT Sans”;
@@ -327,9 +370,6 @@ p._020styles_Endnotes::first-line {
 
 span.abstract {
      font-weight: bold;
-}
-span.Italic {
-	font-style:italic;
 }
 
 table.Basic-Table {
