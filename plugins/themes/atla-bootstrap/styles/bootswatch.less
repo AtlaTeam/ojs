@@ -7,7 +7,7 @@
 
 html, body {
 	font-family:"Muli", sans-serif;
-	font-size:1em;/* em is more accessible than hard coded px sizes, this undoes bootstraps hard coded size*/
+	font-size:1em;
 	}
 
 img {max-width:100%;} /*makes all images responsive with container width*/
@@ -100,12 +100,10 @@ h2.title {
    background-size: 16px 19px;
 }
 
-
 /* for issues with the Masthead, resizing logo*/
-.page_issue #_idContainer002 {
+.page_issue #_idContainer002 img{
      max-width: 300px;
 }
-
 
 
 
@@ -124,15 +122,6 @@ h2.title {
 
 .navbar-brand {padding:1em;}
 
-/* floating register/login/admin links in upper right to the right so they are inline instead of above the logo
-header .container-fluid:first-child {
-	float:right;
-	}
-*/
-
-
-
-
 
 
 /* -----BUTTONS------*/
@@ -147,7 +136,6 @@ header .container-fluid:first-child {
 .btn-primary:hover, .btn-default:hover {
 	text-decoration:underline;
 	}
-
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:focus, .btn-primary.focus {
 	background-color:#e05c3f;
@@ -180,7 +168,6 @@ header .container-fluid:first-child {
 }
 
 
-
 /*----SIDEBAR---- */
 aside#sidebar {
   padding-top: none;
@@ -192,16 +179,6 @@ aside#sidebar {
 
 
 /* -----FOOTER------*/
-/* Make footer green and links white
-footer[role="contentinfo"]{
-	background-color: #b2c249;
-	}
-
-footer p a {
-	color:white;
-	}
-*/
-
 
 footer p{
 	text-align:center;
@@ -215,8 +192,6 @@ div[role=complementary] {display:none;}
 footer .col-md-10, footer .col-sm-2 {
     width: 100%;
 }
-
-
 
 
 /*improving mobile layout for admin home page*/
@@ -242,15 +217,15 @@ footer .col-md-10, footer .col-sm-2 {
 
 /* Begin styling specific to display of HTML article galleys */
 
-.Bold {font-weight:bold;}
-.Italic {font-style:italic;}
+.Bold, .bold {font-weight:bold;}
+.Italic, .italic {font-style:italic;}
 
-/*this styles the h2s*/
+/*this styles the h2s or any text marked up with the h2 class (which says H1 in it)*/
 ._020styles_H1 {
      font-size: 25px;
 }
 
-/*this styles the h3s*/
+/*this styles the h3s or any text marked up with the h3 class (which says H2 in it)*/
 h3._020styles_h3-headings, ._020styles_H2 {
      font-size:20px;
 }
@@ -286,27 +261,43 @@ p._020styles_LCC_LCC2, p._020styles_LCC_LCC3, p._020styles_LCC_LCC4, p._020style
 }
 
 ._020styles_LCC_LCC2{
-     margin-left:9em;
+     margin-left:9.25em;
 }
 
 ._020styles_LCC_LCC3{
-     margin-left:10em;
+     margin-left:10.5em;
 }
 
 ._020styles_LCC_LCC4{
-     margin-left:11em;
+     margin-left:11.75em;
 }
 
 ._020styles_LCC_LCC5{
-     margin-left:12em;
-}
-
-._020styles_LCC_LCC6{
      margin-left:13em;
 }
 
+._020styles_LCC_LCC6{
+     margin-left:14.25em;
+}
+
 ._020styles_LCC_LCC7{
-     margin-left:14em;
+     margin-left:15.5em;
+}
+
+._020styles_LCC_LCC8{
+     margin-left:16.75em;
+}
+
+._020styles_LCC_LCC9{
+     margin-left:20em;
+}
+
+._020styles_LCC_LCC10{
+     margin-left:21.5em;
+}
+
+._020styles_LCC_LCC11{
+     margin-left:23em;
 }
 
 p.ProfDevDates {
@@ -331,11 +322,11 @@ p._020styles_Caption {
 
 /*article subtitles*/
 p._020styles_H0sub {
-     font-family: “PT Sans”;
-     font-weight: 600;
+     font-family:"Muli", sans-serif;
+     font-weight: 700;
      font-size: 20px;
 }
-/*behind abstract text*/
+/* background color behind abstract text */
 p._020styles_Abstract {
      background-color: rgba(178, 194, 73, .4);
      border-style: solid;
@@ -343,15 +334,25 @@ p._020styles_Abstract {
      border-color: rgba(178, 194, 73, 0);
      border-radius: 10px;
 }
-/*data at the beginning of book reviews*/
-p.Bodies_ReviewBook {
-     margin: 20px;
-     font-size: small;
+
+/* citation at the top of reviews */
+._020styles_Review-citation, p.Bodies_ReviewBook {
+     margin-left: 1.8em;
+     font-size: 1.15em;
+     line-height: 1.25;
 }
-/*bylines at the ends of book reviews*/
-p.Bodies_ReviewAuthor {
+/* author at the bottom of reviews */
+._020styles_Reveiw-author, p.Bodies_ReviewAuthor{
      text-align: right;
-     margin: 0px;
+     line-height: .8em;
+}
+/* editor name & closing on editorial TL */
+._020styles_Editor-name{
+     line-height: .8em;
+}
+
+._020styles_Editor-closing{
+     margin-bottom:2em;
 }
 
 /*superscripts the endnote markers in articles*/
@@ -362,14 +363,15 @@ span.CharOverride-2 {
 
 /*indent endnotes while keeping the endnote numbers flush*/
 p._020styles_Endnotes {
-     text-indent: 10px;
-}
-p._020styles_Endnotes::first-line {
-     text-indent: 0px;
+     font-size: .9em;
+     margin-left: 2em;
+     text-indent: -2em;
 }
 
-span.abstract {
+/* format the word abstract at start of abstracts */
+span.Abstract, span.abstract {
      font-weight: bold;
+     text-transform:uppercase;
 }
 
 table.Basic-Table {
