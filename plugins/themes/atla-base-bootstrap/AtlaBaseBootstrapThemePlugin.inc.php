@@ -20,9 +20,7 @@ class AtlaBaseBootstrapThemePlugin extends ThemePlugin {
 	 */
 	public function init() {
 		$this->setParent('bootstrapthreethemeplugin');
-
-		// Override default styles for the "default" subtheme. 
-		$subtheme = $this->parent->getOption('bootstrapTheme');
+		$this->addStyle('child-stylesheet', 'styles/bootswatch.less');
 	}
 
 	/**
