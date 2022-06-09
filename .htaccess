@@ -26,3 +26,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ /index.php/index/$1 [QSA,L]
 </IfModule>
+
+RedirectMatch 404 /\.git
+RedirectMatch 404 /.*\~
+RedirectMatch 404 /.*\.old
+RedirectMatch 404 /.*\.bak
+

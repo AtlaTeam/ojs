@@ -19,3 +19,4 @@ cache
 public
 config.inc.php
 html-images
+.htaccess
