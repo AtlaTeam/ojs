@@ -20,11 +20,7 @@
 	<div class="page-header">
 		<h1>{translate key="about.submissions"}</h1>
 	</div>
-	<ul id="subs-nav">
-		<li><a href="#subs-checklist">Submission Preparation Checklist</a></li>
-		<li><a href="#author-guide">Author Guidelines</a></li>
-		<li><a href="#copyright">Copyright Notice</a></li>
-	</ul>
+
     {* /Page Title *}
 
     {* Login/register prompt *}
@@ -41,7 +37,11 @@
             {translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
 		</div>
     {/if}
-
+	<ul id="subs-nav">
+		<li><a href="#subs-checklist">Submission Preparation Checklist</a></li>
+		<li><a href="#author-guide">Author Guidelines</a></li>
+		<li><a href="#copyright">Copyright Notice</a></li>
+	</ul>
     {* Submission Checklist *}
     {if $submissionChecklist}
 		<div class="submission_checklist" id="subs-checklist">
