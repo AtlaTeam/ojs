@@ -37,7 +37,7 @@
             {translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
 		</div>
     {/if}
-	<ul id="subs-nav">
+	<ul class="subs-nav">
 		<li><a href="#subs-checklist">Submission Preparation Checklist</a></li>
 		<li><a href="#author-guide">Author Guidelines</a></li>
 		<li><a href="#copyright">Copyright Notice</a></li>
