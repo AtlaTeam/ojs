@@ -1,14 +1,17 @@
-//@import url("https://fonts.googleapis.com/css?family=Muli&family=PT+Serif:300,400,700");
-//@web-font-path: "https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap";
-//@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@web-font-path: "https://fonts.googleapis.com/css?family=Muli&family=PT+Serif:300,400,600,700";
 
 .web-font(@path) {
-  @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+  @import url("@{path}");
 }
-//.web-font(@web-font-path);
+.web-font(@web-font-path);
+
+// To be swapped out with above, once Tawny makes changes to live site.
+//.web-font(@path) {
+//  @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+//}
 
 html, body {
-  font-family: "Mulish", sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 1em;
 }
 
@@ -360,7 +363,7 @@ p._020styles_Caption, ._022_Caption {
 
 /* article subtitles */
 p._020styles_H0sub, ._022_Subtitle {
-  font-family: "Mulish", sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: 700;
   font-size: 20px;
 }
