@@ -1,438 +1,381 @@
-@web-font-path: "https://fonts.googleapis.com/css?family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap";
-
-.web-font(@path) {
-  @import url("@{path}");
-}
-.web-font(@web-font-path);
-
-// To be swapped out with above, once Tawny makes changes to live site.
-//.web-font(@path) {
-//  @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-//}
+@import url("https://fonts.googleapis.com/css?family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 html, body {
   font-family: "Muli", sans-serif;
-  font-size: 1em;
+  font-size: 1em
 }
 
-/* makes all images responsive with container width */
 img {
-  max-width: 100%;
+  max-width: 100%
 }
 
-/* base link colors */
 a, a:hover, a:focus {
-  color: #e05c3f;
+  color: #e05c3f
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "PT Serif", serif;
-  font-weight: 700;
+  font-weight: 700
 }
 
 h2.title {
-  font-size: 1.25em;
+  font-size: 1.25em
 }
 
-/* -----HEADER------*/
-
-/* limiting the width of the header content */
 .container-fluid {
-  max-width: 1500px;
+  max-width: 1500px
 }
 
-/* changing the background color on the header area */
 .navbar-default, .header_view {
   background-color: #b2c249;
-  border-color: #b2c249;
+  border-color: #b2c249
 }
 
-/* making links in the header area white */
 .navbar-default .navbar-brand, .header_view .navbar-brand, .navbar-default .nav>li>a, .header_view .nav>li>a {
-  color: white;
+  color: white
 }
 
-/* making links in the header white and underline on hover and focus with orange background color */
 .navbar-default .nav>li>a:hover, .navbar-default .nav>li>a:focus, .navbar-default .nav>li>a:active, .header_view .nav>li>a:hover, .header_view .nav>li>a:focus, .header_view .nav>li>a:active {
   color: white;
   text-decoration: underline;
-  background-color: #e05c3f;
+  background-color: #e05c3f
 }
 
-/* dropdown menu link color */
 .dropdown-menu>li>a {
-  color: #e05c3f;
+  color: #e05c3f
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
   text-decoration: underline;
   color: #fff;
-  background-color: #e05c3f;
+  background-color: #e05c3f
 }
 
-/* hamburger menu */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .header_view .navbar-toggle:hover, .header_view .navbar-toggle:focus {
-  background-color: #e05c3f;
+  background-color: #e05c3f
 }
 
 .navbar-default .navbar-toggle, .header_view .navbar-toggle {
-  border-color: white;
+  border-color: white
 }
 
 .navbar-default .navbar-toggle .icon-bar, .header_view .navbar-toggle .icon-bar {
-  background-color: white;
+  background-color: white
 }
 
-/* nav menu item with dropdown - top level item color */
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus, .header_view .navbar-nav>.open>a, .header_view .navbar-nav>.open>a:hover, .header_view .navbar-nav>.open>a:focus {
   background-color: #e05c3f;
   color: white;
-  text-decoration: underline;
+  text-decoration: underline
 }
 
-/* article header link color */
 .pkp_page_article.pkp_op_view .header_view a {
-  color: #ffffff;
+  color: #ffffff
 }
 
-/* add back arrow to article header link */
 .pkp_page_article.pkp_op_view .header_view a.title:before {
   display: inline-block;
   height: 18px;
   width: 19px;
   content: "";
   background: url(../../../../../plugins/themes/atla-bootstrap/arrow.svg) no-repeat 0 0;
-  background-size: 16px 19px;
+  background-size: 16px 19px
 }
 
-/* for issues with the Masthead, resizing logo*/
 .page_issue #_idContainer002 img {
-  max-width: 300px;
+  max-width: 300px
 }
 
-/* -----LOGO------ */
-
-/* undoing fixed height on the logo */
 .navbar-brand {
-  height: auto;
+  height: auto
 }
 
 .navbar-brand-logo img {
-  max-height: 125px;
+  max-height: 125px
 }
 
-/* adjust publication logo size */
 .media-left img {
-  max-width: 200px;
+  max-width: 200px
 }
 
 .navbar-brand {
-  padding: 1em;
+  padding: 1em
 }
 
-/* -----BUTTONS------*/
-
-/* button styles */
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:focus, .btn-primary.focus, .btn-default, .btn-default:hover {
   background-color: #e05c3f !important;
   border-color: #fff;
-  color: #fff;
+  color: #fff
 }
 
 .btn-primary:hover, .btn-default:hover {
-  text-decoration: underline;
+  text-decoration: underline
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:focus, .btn-primary.focus {
   background-color: #e05c3f;
-  border-color: #fff;
+  border-color: #fff
 }
 
 .btn-primary:hover {
-  text-decoration: underline;
+  text-decoration: underline
 }
 
-/* buttons under each issue on admin home page */
 .media-body .nav-pills>li>a {
   background-color: #e05c3f;
-  color: white;
+  color: white
 }
 
 .media-body .nav>li>a:hover, .nav>li>a:focus {
   background-color: #e05c3f;
   color: white;
-  text-decoration: underline;
+  text-decoration: underline
 }
 
-/* search button text color */
 .btn-default, .pkp_block.block_make_submission a {
-  color: #fff;
+  color: #fff
 }
 
-/* making search button border orange */
 .navbar-form .btn-default {
-  border-color: #e05c3f;
+  border-color: #e05c3f
 }
-
-/* ----SIDEBAR---- */
 
 aside#sidebar {
-  padding-top: none;
+  padding-top: none
 }
-
-/* -----FOOTER------ */
 
 footer p {
-  text-align: center;
+  text-align: center
 }
 
-/* hide ojs logo */
 div[role=complementary] {
-  display: none;
+  display: none
 }
 
-/* fixing column width for footer now that the ojs logo is hidden */
 footer .col-md-10, footer .col-sm-2 {
-  width: 100%;
+  width: 100%
 }
 
 .media-left, .media-right, .media-body {
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: 1em
 }
 
 .media-body {
-  width: 100%;
+  width: 100%
 }
 
-/****** HTML Galleys ******/
-
-
-/* Style for article HTML galleys when using the embedHtmlArticleGalley plugin */
 #htmlContainer .container {
   padding: 0;
-  width: auto;
+  width: auto
 }
 
 #htmlContainer .col-md-8 {
   width: 100%;
-  padding: 0;
+  padding: 0
 }
 
-/* Begin styling specific to display of HTML article galleys */
 .Bold, .bold {
-  font-weight: bold;
+  font-weight: bold
 }
 
 .Italic, .italic {
-  font-style: italic;
+  font-style: italic
 }
 
 .Bold-Italic {
   font-weight: bold;
-  font-style: italic;
+  font-style: italic
 }
 
 .Bold-Caps {
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
 
-/* this styles the h2s or any text marked up with the h2 class (which says H1 in it) */
 ._020styles_H1, ._022_TextHeading1 {
-  font-size: 25px;
+  font-size: 25px
 }
 
-/* this styles the h3s or any text marked up with the h3 class (which says H2 in it) */
 h3._020styles_h3-headings, ._020styles_H2, ._022_TextHeading2 {
-  font-size: 20px;
+  font-size: 20px
 }
 
 p._020styles_Byline, ._022_Byline {
   font-style: italic;
-  margin-bottom: 15px;
+  margin-bottom: 15px
 }
 
 p._020styles_BylineBottom, ._022_BylineBottom {
   font-style: italic;
-  margin-top: 40px;
+  margin-top: 40px
 }
 
 ._020styles_Reveiw-author, p.Bodies_ReviewAuthor, ._022_BylineTextEnd {
   text-align: right;
-  line-height: .8em;
+  line-height: .8em
 }
 
 ._020styles_Editor-name, ._022_Editor-name {
-  line-height: .8em;
+  line-height: .8em
 }
 
 ._020styles_Editor-closing, ._022_Editor-closing {
-  margin-bottom: 2em;
+  margin-bottom: 2em
 }
 
 p._020styles_LOChead1, ._022_LOChead1 {
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 0px
 }
 
 p._020styles_LOChead2, ._022_LOChead2 {
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-left: 59px;
+  margin-left: 59px
 }
 
 p._020styles_LCC_LCC1, ._022_LCC_LCC1 {
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0px
 }
 
 p._020styles_LCC_LCC2, p._020styles_LCC_LCC3, p._020styles_LCC_LCC4, p._020styles_LCC_LCC5, p._020styles_LCC_LCC6, p._020styles_LCC_LCC7, p._020styles_LCC_LCC8, p._020styles_LCC_LCC9, p._020styles_LCC_LCC10, p._020styles_LCC_LCC11, ._022_LCC_LCC2, ._022_LCC_LCC3, ._022_LCC_LCC4, ._022_LCC_LCC5, ._022_LCC_LCC6, ._022_LCC_LCC7, ._022_LCC_LCC8, ._022_LCC_LCC9, ._022_LCC_LCC10, ._022_LCC_LCC11 {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 0px
 }
 
-/* indenting the classifications */
 ._020styles_LCC_LCC1, ._022_LCC_LCC1 {
-  margin-left: 8em;
+  margin-left: 8em
 }
 
 ._020styles_LCC_LCC2, ._022_LCC_LCC2 {
-  margin-left: 9.25em;
+  margin-left: 9.25em
 }
 
 ._020styles_LCC_LCC3, ._022_LCC_LCC3 {
-  margin-left: 10.5em;
+  margin-left: 10.5em
 }
 
 ._020styles_LCC_LCC4, ._022_LCC_LCC4 {
-  margin-left: 11.75em;
+  margin-left: 11.75em
 }
 
 ._020styles_LCC_LCC5, ._022_LCC_LCC5 {
-  margin-left: 13em;
+  margin-left: 13em
 }
 
 ._020styles_LCC_LCC6, ._022_LCC_LCC6 {
-  margin-left: 14.25em;
+  margin-left: 14.25em
 }
 
 ._020styles_LCC_LCC7, ._022_LCC_LCC7 {
-  margin-left: 15.5em;
+  margin-left: 15.5em
 }
 
 ._020styles_LCC_LCC8, ._022_LCC_LCC8 {
-  margin-left: 16.75em;
+  margin-left: 16.75em
 }
 
 ._020styles_LCC_LCC9, ._022_LCC_LCC9 {
-  margin-left: 18em;
+  margin-left: 18em
 }
 
 ._020styles_LCC_LCC10, ._022_LCC_LCC10 {
-  margin-left: 19.25em;
+  margin-left: 19.25em
 }
 
 ._020styles_LCC_LCC11, ._022_LCC_LCC11 {
-  margin-left: 20.5em;
+  margin-left: 20.5em
 }
 
-p.ProfDevDates, ._022_ProfDevPrice {
-  margin-bottom: 0px;
+p.ProfDevDates, ._022_ProfDevDates {
+  margin-bottom: 0px
 }
 
-p.ProfDevPrice, ._022_ProfDevDates {
+p.ProfDevPrice, ._022_ProfDevPrice {
   margin-top: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 25px
 }
 
 p._020styles_WorksCited, ._022_WorksCited {
   margin-left: 20px;
-  text-indent: -20px;
+  text-indent: -20px
 }
 
 p._020styles_TitleNum, ._022_TitleNum {
-  margin-bottom: 0px;
+  margin-bottom: 0px
 }
 
-/* caption text for images and tables */
 p._020styles_Caption, ._022_Caption {
   font-size: .85em;
-  line-height: 1.15em;
+  line-height: 1.15em
 }
 
-/* article subtitles */
 p._020styles_H0sub, ._022_Subtitle {
   font-family: "Muli", sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 20px
 }
 
-/* background color behind abstract text */
 p._020styles_Abstract, ._022_Abstract {
   background-color: rgba(178, 194, 73, 0.4);
   border-style: solid;
   border-width: 15px;
   border-color: rgba(178, 194, 73, 0);
-  border-radius: 10px;
+  border-radius: 10px
 }
 
-/* citation at the top of reviews */
 ._020styles_Review-citation, p.Bodies_ReviewBook, ._022_Review-citation {
   margin-left: 1.8em;
   font-size: 1.15em;
-  line-height: 1.25;
+  line-height: 1.25
 }
 
-/* author at the bottom of reviews */
-._020styles_Reveiw-author, p.Bodies_ReviewAuthor{
-     text-align: right;
-     line-height: .8em;
-}
-/* editor name & closing on editorial TL */
-._020styles_Editor-name{
-     line-height: .8em;
+._020styles_Reveiw-author, p.Bodies_ReviewAuthor {
+  text-align: right;
+  line-height: .8em
 }
 
-._020styles_Editor-closing{
-     margin-bottom:2em;
+._020styles_Editor-name {
+  line-height: .8em
 }
 
-/* superscripts the endnote markers in articles */
+._020styles_Editor-closing {
+  margin-bottom: 2em
+}
+
 span.CharOverride-2 {
   vertical-align: super;
-  font-size: 69%;
+  font-size: 69%
 }
 
-/* indent endnotes while keeping the endnote numbers flush */
 p._020styles_Endnotes, ._022_Endnotes, .Footnotes {
   font-size: .9em;
   margin-left: 2em;
-  text-indent: -2em;
+  text-indent: -2em
 }
 
 ._022_NumList, ._022_BulletList {
-  margin-bottom:.5em;
+  margin-bottom: .5em
 }
 
 ._020styles_BlockQuote, ._022_BlockQuote {
-  border-left:0;
-  font-size:.9em;
+  border-left: 0;
+  font-size: .9em;
   padding: 10px 20px;
-  margin: 0 0  0 20px;
+  margin: 0 0 0 20px
 }
 
-/* fix for article subtitles */
 h2 a span.subtitle {
   display: block;
   color: #777;
-  font-size: 85%;
+  font-size: 85%
 }
 
-/* format the word abstract at start of abstracts */
 span.Abstract, span.abstract {
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: uppercase
 }
 
 table.Basic-Table {
@@ -441,7 +384,7 @@ table.Basic-Table {
   border-style: solid;
   border-width: 1px;
   margin-bottom: 8px;
-  margin-top: 8px;
+  margin-top: 8px
 }
 
 td.Basic-Table {
@@ -461,46 +404,33 @@ td.Basic-Table {
   padding-bottom: 4px;
   padding-left: 4px;
   padding-right: 4px;
-  vertical-align: top;
+  vertical-align: top
 }
 
 thead {
-  font-weight: bold;
+  font-weight: bold
 }
 
-/******** LISTS *********/
-ul.subs-nav {
-  font-size: 1.25em;
-  margin-bottom: 2em;
-}
-
-/* Media Queries */
-@media (min-width: 768px){
-
-  /* margin on navbar for larger screens - used on publications */
+@media (min-width:768px) {
   .navbar-nav {
-	margin: 46px -15px 0px 0px;
+	margin: 46px -15px 0px 0px
   }
 
-  /* moving search menu to the right for ipad and larger */
   .pull-md-right {
-	float: right;
+	float: right
   }
 
-  /* removing border radius on header */
   .navbar, .header_view {
-	border-radius: 0;
+	border-radius: 0
   }
 
-  /* adjusting admin home page journal buttons */
   .nav-pills>li+li {
 	margin-left: 2px;
-	margin-top: 0px;
+	margin-top: 0px
   }
 
-  /* adjusting admin home page journal logos */
   .media-left, .media-right, .media-body {
 	display: table-cell;
-	margin-bottom: 0em;
+	margin-bottom: 0em
   }
 }
