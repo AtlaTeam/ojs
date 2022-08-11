@@ -238,9 +238,9 @@ class PorticoExportDom {
 		} elseif ($url = $galley->getRemoteURL()) {
 			$node->setAttribute('xlink:href', $url);
 		}
-		else {
-			return NULL;
-		}
+		// else {
+			// return NULL;
+		// }
 		if ($label = $galley->getData('label')) {
 			$node->setAttribute('xlink:title', $label);
 			$captionNode = $node->appendChild($doc->createElement('caption'));
