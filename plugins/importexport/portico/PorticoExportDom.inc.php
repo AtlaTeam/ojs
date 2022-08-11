@@ -237,8 +237,9 @@ class PorticoExportDom {
 			$node->setAttribute('xlink:href', $path);
 		} elseif ($url = $galley->getRemoteURL()) {
 			$node->setAttribute('xlink:href', $url);
-		} else {
-			return null;
+		}
+		else {
+			return NULL;
 		}
 		if ($label = $galley->getData('label')) {
 			$node->setAttribute('xlink:title', $label);
@@ -283,7 +284,7 @@ class PorticoExportDom {
 			$root->appendChild($bioNode);
 			$bioNode->appendChild($doc->createElement('p', $bio));
 		}
-		
+
 		if ($country = $author->getCountry()) {
 			$addressNode = $this->_document->createElement('address');
 			$addressNode->appendChild($doc->createElement('country', $country));
