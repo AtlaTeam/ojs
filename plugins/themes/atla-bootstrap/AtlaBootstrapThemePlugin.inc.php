@@ -19,18 +19,31 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
+		// Define custom Atla subthemes (basically stylesheets).
+		$atla_options = [
+			'type' => 'radio',
+			'label' => __('plugins.themes.bootstrap3.options.bootstrapTheme.label'),
+			'description' => __('plugins.themes.bootstrap3.options.bootstrapTheme.description'),
+			'options' => [
+				['value' => 'atla-theolib', 'label' => 'Atla (Theo Lib)'],
+				['value' => 'atla-other', 'label' => 'Atla (Others)']
+			]
+		];
+
+		// Set parent theme and add custom Atla subthemes.
 		$this->setParent('bootstrapthreethemeplugin');
+		$this->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
 
-		// Override default styles for the "default" subtheme. Cookie Pro styling handled separately.
-		$subtheme = $this->parent->getOption('bootstrapTheme');
-		if ($subtheme == 'bootstrap3') {
-			$this->addStyle('child-stylesheet', 'styles/index.less');
-			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
-		}
-
-		else {
-			$this->modifyStyle("bootstrapTheme-{$subtheme}", ['addLess' => ['styles/cookiepro.less']]);
-		}
+//		// Override default styles for the "default" subtheme. Cookie Pro styling handled separately.
+//		$subtheme = $this->parent->getOption('bootstrapTheme');
+//		if ($subtheme == 'bootstrap3') {
+//			$this->addStyle('child-stylesheet', 'styles/index.less');
+//			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
+//		}
+//
+//		else {
+//			$this->modifyStyle("bootstrapTheme-{$subtheme}", ['addLess' => ['styles/cookiepro.less']]);
+//		}
 	}
 
 	/**
@@ -38,7 +51,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return 'Atla Bootstrap3 Theme';
+		return 'Bootstrap3 Theme (Atla Version)';
 	}
 
 	/**
