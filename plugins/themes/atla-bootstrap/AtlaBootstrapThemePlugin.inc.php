@@ -19,7 +19,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
-		// Define custom Atla subthemes (basically stylesheets).
+		// Define custom Atla subthemes.
 		$atla_options = [
 			'type' => 'radio',
 			'label' => __('plugins.themes.bootstrap3.options.bootstrapTheme.label'),
@@ -32,7 +32,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 
 		// Set parent theme and add custom Atla subthemes.
 		$this->setParent('bootstrapthreethemeplugin');
-		$this->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
+		$this->parent->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
 
 //		// Override default styles for the "default" subtheme. Cookie Pro styling handled separately.
 //		$subtheme = $this->parent->getOption('bootstrapTheme');
@@ -51,7 +51,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return 'Bootstrap3 Theme (Atla Version)';
+		return 'Bootstrap3 Theme (Atla)';
 	}
 
 	/**
