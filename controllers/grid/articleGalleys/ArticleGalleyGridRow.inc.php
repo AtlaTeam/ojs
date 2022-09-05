@@ -62,13 +62,13 @@ class ArticleGalleyGridRow extends GridRow {
 				'editGalley',
 				new AjaxModal(
 					$router->url($request, null, null, 'editGalley', null, $actionArgs),
-					($this->_isEditable)?__('submission.layout.editGalley'):__('submission.layout.viewGalley'),
+					__('submission.layout.editGalley'),
 					'modal_edit'
 				),
-				($this->_isEditable)?__('grid.action.edit'):__('grid.action.view'),
+				__('grid.action.edit'),
 				'edit'
 			));
-			
+
 			if ($this->_isEditable) {
 				$galley = $this->getData();
 				if ($galley->getRemoteUrl() == '') {

@@ -27,7 +27,7 @@ class ArticleGalleyForm extends Form {
 	var $_articleGalley = null;
 
 	/** @var bool indicates whether the form should be editable */
-	var $_isEditable = true;
+	public bool $_isEditable = true;
 
 	/**
 	 * Constructor.
