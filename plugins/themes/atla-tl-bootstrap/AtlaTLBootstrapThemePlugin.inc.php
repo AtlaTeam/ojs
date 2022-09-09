@@ -1,10 +1,10 @@
 <?php
 /**
- * @file plugins/themes/atla-tl-bootstrap/AtlaBootstrapThemePlugin.inc.php
+ * @file plugins/themes/atla-tl-bootstrap/AtlaTLBootstrapThemePlugin.inc.php
  *
  * Copyright (c) 2021 Atla
  *
- * @brief Atla Bootstrap3 child theme.
+ * @brief Atla TL Bootstrap3 child theme.
  */
 
 import('lib.pkp.classes.plugins.ThemePlugin');
@@ -12,7 +12,7 @@ import('lib.pkp.classes.plugins.ThemePlugin');
 /**
  * Defines the AtlaBootstrapThemePlugin class.
  */
-class AtlaBootstrapThemePlugin extends ThemePlugin {
+class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 
 	/**
 	 * Set the parent theme and merge the child styles into the parent stylesheet.
@@ -22,16 +22,16 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 		// Define custom Atla subthemes.
 		$atla_options = [
 			'type' => 'radio',
-			'label' => 'Bootstrap Theme (Atla)',
+			'label' => 'Bootstrap Theme (Atla TL)',
 			'description' => 'Select either the default bootstrap subtheme (only custom templates) or the Atla subtheme (with both custom templates and css).',
 			'options' => [
 				['value' => 'bootstrap3', 'label' => 'Default Bootstrap Theme'],
-				['value' => 'atla-tl', 'label' => 'Atla'],
+				['value' => 'atla', 'label' => 'Atla'],
 			]
 		];
 
 		// Set parent theme and add custom Atla subthemes.
-		$this->setParent('bootstrapthreethemeplugin');
+		$this->setParent('atlabootstrapthreethemeplugin');
 		$this->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
 
 		// Obtain subtheme name. Set to default bootstrap if none selected.
@@ -41,12 +41,12 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 		$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
 
 		// Handling for Atla subthemes.
-		if ($subtheme === 'atla-tl') {
-			$this->addStyle('atla-tl', 'styles/' . $subtheme . 'less');
+		if ($subtheme === 'atla') {
+			$this->addStyle('atla', 'styles/' . $subtheme . 'less');
 			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
 		}
 
-		// Handling for default bootstrap style (set for parent theme).
+		// Handling for default bootstrap style.
 		else {
 			$this->addStyle('bootstrap', 'styles/bootstrap.less');
 			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
@@ -67,6 +67,6 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDescription() {
-		return 'Atla implementation of the Bootstrap3 theme. Tested with Bootstrap version 3.2.0.3.';
+		return 'Atla (TL) implementation of the Bootstrap3 theme. Requires the Atla Bootstrap theme to be installed. Tested with Bootstrap version 3.2.0.3.';
 	}
 }

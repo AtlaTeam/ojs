@@ -17,7 +17,7 @@
 			| {$currentContext->getLocalizedName()}
 		{/if}
 	</title>
-	<!-- CookiePro Cookies Consent Notice start for atla.com -->
+	<!-- CookiePro Cookies Consent Notice start for atla-tl.com -->
 	<script type="text/javascript" src="https://cookie-cdn.cookiepro.com/consent/b2250761-da6d-42e6-a4f3-93a8d7e4d949/OtAutoBlock.js" ></script>
 	<script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="b2250761-da6d-42e6-a4f3-93a8d7e4d949" ></script>
 	<script type="text/javascript">

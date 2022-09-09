@@ -6,5 +6,5 @@
  *
  * @brief Wrapper for the Atla Booststrap3 child theme.
  */
-require_once('AtlaBootstrapThemePlugin.inc.php');
-return new AtlaBootstrapThemePlugin();
+require_once('AtlaTLBootstrapThemePlugin.inc.php');
+return new AtlaTLBootstrapThemePlugin();

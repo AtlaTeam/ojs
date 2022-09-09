@@ -2229,10 +2229,10 @@ msgid "section.policy"
 msgstr "Bölüm Politikası"
 
 msgid "navigation.skip.issue"
-msgstr "Güncel sayıyı atla"
+msgstr "Güncel sayıyı atla-tl"
 
 msgid "navigation.skip.about"
-msgstr "Dergi hakkında kısmını atla"
+msgstr "Dergi hakkında kısmını atla-tl"
 
 msgid "catalog.sortBy.categoryDescription"
 msgstr "Bu kategorideki makalelerin nasıl sıralanacağını seçin."

@@ -1,18 +1,18 @@
 <?php
 /**
- * @file plugins/themes/atla-base-bootstrap/AtlaBaseBootstrapThemePlugin.inc.php
+ * @file plugins/themes/great-baptist-bootstrap/GreatBaptistBootstrapThemePlugin.inc.php
  *
  * Copyright (c) 2021 Atla
  *
- * @brief Default Bootstrap3 theme with Atla-provided fixes.
+ * @brief Bootstrap3 (GBJCM) child theme.
  */
 
 import('lib.pkp.classes.plugins.ThemePlugin');
 
 /**
- * Defines the AtlaBootstrapThemePlugin class.
+ * Defines the GreatBaptistBootstrapThemePlugin class.
  */
-class AtlaBaseBootstrapThemePlugin extends ThemePlugin {
+class GreatBaptistBootstrapThemePlugin extends ThemePlugin {
 
 	/**
 	 * Set the parent theme and merge the child styles into the parent stylesheet.
@@ -28,7 +28,7 @@ class AtlaBaseBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return 'Atla Base Boostrap Theme';
+		return 'Bootstrap3 Theme (GBJCM)';
 	}
 
 	/**
@@ -36,6 +36,6 @@ class AtlaBaseBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDescription() {
-		return 'Default Boostrap theme with various patches and fixes. Tested with Bootstrap theme version 3.2.0.3.';
+		return 'Boostrap3 child theme customized for GBJCM. Tested with Bootstrap theme version 3.2.0.3.';
 	}
 }
