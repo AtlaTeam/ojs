@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2021 Atla
  *
- * @brief Wrapper for Booststrap3 (GBCJM) theme.
+ * @brief Wrapper for Booststrap3 (GCBJM) theme.
  */
 require_once('GreatBaptistBootstrapThemePlugin.inc.php');
 return new GreatBaptistBootstrapThemePlugin();

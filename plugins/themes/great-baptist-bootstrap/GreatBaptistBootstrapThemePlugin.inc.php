@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2021 Atla
  *
- * @brief Bootstrap3 (GBJCM) child theme.
+ * @brief Bootstrap3 (GCBJM) child theme.
  */
 
 import('lib.pkp.classes.plugins.ThemePlugin');
@@ -28,7 +28,7 @@ class GreatBaptistBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return 'Bootstrap3 Theme (GBJCM)';
+		return 'Bootstrap3 Theme (GCBJM)';
 	}
 
 	/**
@@ -36,6 +36,6 @@ class GreatBaptistBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDescription() {
-		return 'Boostrap3 child theme customized for GBJCM. Tested with Bootstrap theme version 3.2.0.3.';
+		return 'Boostrap3 child theme customized for GCBJM. Tested with Bootstrap theme version 3.2.0.3.';
 	}
 }

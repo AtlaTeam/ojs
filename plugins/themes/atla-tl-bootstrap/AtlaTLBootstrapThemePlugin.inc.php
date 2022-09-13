@@ -26,7 +26,7 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 			'description' => 'Select either the default bootstrap subtheme (only custom templates) or the Atla subtheme (with both custom templates and css).',
 			'options' => [
 				['value' => 'bootstrap3', 'label' => 'Default Bootstrap Theme'],
-				['value' => 'atla-tl', 'label' => 'Atla - TL'],
+				['value' => 'atla', 'label' => 'Atla'],
 			]
 		];
 
@@ -38,8 +38,8 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 		$subtheme = !empty($this->getOption('bootstrapTheme')) ? $this->getOption('bootstrapTheme') : 'bootstrap3';
 
 		// Handling for Atla subthemes.
-		if ($subtheme === 'atla-tl') {
-			$this->addStyle('atla-tl', 'styles/' . $subtheme . '.less');
+		if ($subtheme === 'atla') {
+			$this->addStyle('atla', 'styles/' . $subtheme . '.less');
 			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
 		}
 

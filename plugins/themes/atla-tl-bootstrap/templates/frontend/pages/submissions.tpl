@@ -12,7 +12,7 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="about.submissions"}
 
-<div id="main-content" class="page page_submissions">
+<div id="main-content" class="page page_submissions theo-lib">
 
     {include file="frontend/components/breadcrumbs.tpl" currentTitleKey="about.submissions"}
 
@@ -20,11 +20,7 @@
 	<div class="page-header">
 		<h1>{translate key="about.submissions"}</h1>
 	</div>
-	<ul id="subs-nav">
-		<li><a href="#subs-checklist">Submission Preparation Checklist</a></li>
-		<li><a href="#author-guide">Author Guidelines</a></li>
-		<li><a href="#copyright">Copyright Notice</a></li>
-	</ul>
+
     {* /Page Title *}
 
     {* Login/register prompt *}
@@ -41,6 +37,19 @@
             {translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
 		</div>
     {/if}
+	<ul id="subs-nav">
+		<li><a href="#subs-checklist">Submission Preparation Checklist</a></li>
+		<li><a href="#author-guide">Author Guidelines</a>
+			<ul>
+				<li><a href="#subs-deadlines">Deadlines</a></li>
+				<li><a href="#subs-instructions">Submission Instructions</a></li>
+			</ul>
+		</li>
+		<li><a href="#copyright">Copyright Notice</a></li>
+	</ul>
+
+
+
 
     {* Submission Checklist *}
     {if $submissionChecklist}
@@ -50,6 +59,7 @@
                     {translate key="about.submissionPreparationChecklist"}
                     {include file="frontend/components/editLink.tpl" page="management" op="settings" path="workflow" anchor="submission" sectionTitleKey="about.submissionPreparationChecklist"}
 				</h2>
+				<p class="lead">Please review the <a hfref="https://atla.libguides.com/atlaopenpress">Atla Open Press House Style Guidelines</a> prior to completing your submission.</p>
 			</div>
 			<p class="lead description">
                 {translate key="about.submissionPreparationChecklist.description"}
