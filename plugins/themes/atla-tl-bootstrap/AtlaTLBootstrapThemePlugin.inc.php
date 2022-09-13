@@ -26,28 +26,26 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 			'description' => 'Select either the default bootstrap subtheme (only custom templates) or the Atla subtheme (with both custom templates and css).',
 			'options' => [
 				['value' => 'bootstrap3', 'label' => 'Default Bootstrap Theme'],
-				['value' => 'atla', 'label' => 'Atla'],
+				['value' => 'atla-tl', 'label' => 'Atla - TL'],
 			]
 		];
 
 		// Set parent theme and add custom Atla subthemes.
-		$this->setParent('atlabootstrapthreethemeplugin');
+		$this->setParent('bootstrapthreethemeplugin');
 		$this->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
 
 		// Obtain subtheme name. Set to default bootstrap if none selected.
 		$subtheme = !empty($this->getOption('bootstrapTheme')) ? $this->getOption('bootstrapTheme') : 'bootstrap3';
 
-		// Determine the path to the glyphicons font in Bootstrap.
-		$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
-
 		// Handling for Atla subthemes.
-		if ($subtheme === 'atla') {
-			$this->addStyle('atla', 'styles/' . $subtheme . 'less');
+		if ($subtheme === 'atla-tl') {
+			$this->addStyle('atla-tl', 'styles/' . $subtheme . '.less');
 			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
 		}
 
 		// Handling for default bootstrap style.
 		else {
+			$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
 			$this->addStyle('bootstrap', 'styles/bootstrap.less');
 			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
 			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
@@ -59,7 +57,7 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 	 * @return string
 	 */
 	function getDisplayName() {
-		return 'Bootstrap3 Theme (Atla)';
+		return 'Bootstrap3 Theme (Atla - TL)';
 	}
 
 	/**
