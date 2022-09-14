@@ -11,7 +11,7 @@
 
 <version>
 	<!-- The application value should match the directory name of the theme -->
-	<application>atla-base-bootstrap</application>
+	<application>great-baptist-bootstrap</application>
 	<type>plugins.themes</type>
 	<release>1.0.0.0</release>
 	<date>2022-4-28</date>
