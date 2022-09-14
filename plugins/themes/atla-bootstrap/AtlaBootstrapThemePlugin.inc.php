@@ -27,6 +27,8 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 			'options' => [
 				['value' => 'bootstrap3', 'label' => 'Default Bootstrap Theme'],
 				['value' => 'atla', 'label' => 'Atla'],
+				['value' => 'paper', 'label' => 'ANZTLA (Paper)'],
+				['value' => 'journal', 'label' => 'Wabash (Journal)'],
 			]
 		];
 
@@ -38,8 +40,8 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 		$subtheme = !empty($this->getOption('bootstrapTheme')) ? $this->getOption('bootstrapTheme') : 'bootstrap3';
 
 		// Handling for Atla subthemes.
-		if ($subtheme === 'atla') {
-			$this->addStyle('atla', 'styles/' . $subtheme . '.less');
+		if ($subtheme !== 'bootstrap3') {
+			$this->addStyle('child-stylesheet', 'styles/' . $subtheme . '.less');
 			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
 		}
 
