@@ -19,8 +19,37 @@ class GreatBaptistBootstrapThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
+		// Define custom Atla subthemes.
+		$atla_options = [
+			'type' => 'radio',
+			'label' => 'Bootstrap Theme (GCBJM)',
+			'description' => 'Select either the default bootstrap subtheme (only custom templates) or the GCBJM subtheme (with both custom templates and css).',
+			'options' => [
+				['value' => 'bootstrap3', 'label' => 'Default Bootstrap Theme'],
+				['value' => 'gcbjm', 'label' => 'GCBJM'],
+			]
+		];
+
+		// Set parent theme and add custom Atla subthemes.
 		$this->setParent('bootstrapthreethemeplugin');
-		$this->addStyle('child-stylesheet', 'styles/bootswatch.less');
+		$this->addOption('bootstrapTheme', 'FieldOptions', $atla_options);
+
+		// Obtain subtheme name. Set to default bootstrap if none selected.
+		$subtheme = !empty($this->getOption('bootstrapTheme')) ? $this->getOption('bootstrapTheme') : 'bootstrap3';
+
+		// Handling for Atla subthemes.
+		if ($subtheme === 'gcbjm') {
+			$this->addStyle('child-stylesheet', 'styles/' . $subtheme . '.less');
+			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
+		}
+
+		// Handling for default bootstrap style.
+		else {
+			$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
+			$this->addStyle('bootstrap', 'styles/bootstrap.less');
+			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
+			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
+		}
 	}
 
 	/**
