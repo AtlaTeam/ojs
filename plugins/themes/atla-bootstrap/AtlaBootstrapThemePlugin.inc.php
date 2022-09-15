@@ -42,7 +42,7 @@ class AtlaBootstrapThemePlugin extends ThemePlugin {
 		// Handling for Atla subthemes.
 		if ($subtheme !== 'bootstrap3') {
 			$this->addStyle('child-stylesheet', 'styles/' . $subtheme . '.less');
-			$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
+			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
 		}
 
 		// Handling for default bootstrap style (set for parent theme).
