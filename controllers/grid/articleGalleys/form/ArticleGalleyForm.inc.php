@@ -112,7 +112,7 @@ class ArticleGalleyForm extends Form {
 		}
 
 		if (!$this->_isEditable) {
-			$this->addError('', __('galley.cantEditPublished'));
+			$this->addError('', __('publication.notEditable'));
 		}
 
 		return parent::validate($callHooks);
