@@ -128,16 +128,16 @@ class DublinCoreMetaPlugin extends GenericPlugin {
 		$dao = DAORegistry::getDAO('SubmissionKeywordDAO');
 		$keywords = $dao->getKeywords($article->getCurrentPublication()->getId(), array(AppLocale::getLocale()));
 		foreach ($keywords as $locale => $localeKeywords) {
-			foreach ($localeKeywords as $keyword) {
-				$templateMgr->addHeader('dublinCoreSubject' . $locale, '<meta name="DC.Subject" xml:lang="' . htmlspecialchars(substr($locale, 0, 2)) . '" content="' . htmlspecialchars($keyword) . '"/>');
+			foreach ($localeKeywords as $i => $keyword) {
+				$templateMgr->addHeader('dublinCoreSubject' . $locale . $i, '<meta name="DC.Subject" xml:lang="' . htmlspecialchars(substr($locale, 0, 2)) . '" content="' . htmlspecialchars($keyword) . '"/>');
 			}
 		}
 
 		if ($publication) {
-			$templateMgr->addHeader('dublinCoreTitle', '<meta name="DC.Title" content="' . htmlspecialchars($publication->getLocalizedTitle()) . '"/>');
-			foreach ($publication->getData('title') as $locale => $title) {
+			$templateMgr->addHeader('dublinCoreTitle', '<meta name="DC.Title" content="' . htmlspecialchars($publication->getLocalizedFullTitle()) . '"/>');
+			foreach ($publication->getFullTitles() as $locale => $title) {
 				if (empty($title) || $locale === $publication->getData('locale')) continue;
-				$templateMgr->addHeader('dublinCoreAltTitle' . $locale, '<meta name="DC.Title.Alternative" xml:lang="' . htmlspecialchars(substr($locale, 0, 2)) . '" content="' . htmlspecialchars($publication->getLocalizedTitle($locale)) . '"/>');
+				$templateMgr->addHeader('dublinCoreAltTitle' . $locale, '<meta name="DC.Title.Alternative" xml:lang="' . htmlspecialchars(substr($locale, 0, 2)) . '" content="' . htmlspecialchars($publication->getLocalizedFullTitle($locale)) . '"/>');
 			}
 		}
 

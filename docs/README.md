@@ -2,8 +2,8 @@
 	=== Open Journal Systems
 	=== The Public Knowledge Project
 	=== Version: 3.3.0
-	=== GIT tag: 3_3_0-8
-	=== Release date: August 30, 2021
+	=== GIT tag: 3_3_0-11
+	=== Release date: June 7, 2022
 	===================================
 
 
@@ -28,7 +28,7 @@ improvements or bug fixes to the software.
 
 Recommended server requirements:
 
-* PHP >= 7.3
+* PHP 7.3.x, 7.4.x, or 8.0.x
 * MySQL >= 4.1 or PostgreSQL >= 9.5
 * Apache >= 1.3.2x or >= 2.0.4x or Microsoft IIS 6
 * Operating system: Any OS that supports the above software, including
@@ -60,6 +60,9 @@ A secure deployment can be best achieved by using the following policies:
 	backups of this directory should be roughly synchronized with
 	database backups.
 
+* Configure an "allowed_hosts" setting in config.inc.php in order to prevent
+	HOST header injection attacks. This setting should contain a JSON-
+	formatted list of all hostnames that the server should consider valid.
 
 ## Installation
 
