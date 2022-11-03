@@ -15,3 +15,9 @@ styles/build.css
 cypress.env.json
 cypress/logs/
 cypress/screenshots/
+
+# Atla additions.
+.idea
+cache
+public
+html-images
