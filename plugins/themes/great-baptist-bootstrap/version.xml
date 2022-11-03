@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+  * plugins/themes/great-baptist-bootstrap/version.xml
+  *
+  * Copyright (c) 2022 Atla
+  *
+  * Plugin version information.
+  -->
+
+<version>
+	<!-- The application value should match the directory name of the theme -->
+	<application>great-baptist-bootstrap</application>
+	<type>plugins.themes</type>
+	<release>1.0.0.0</release>
+	<date>2022-4-28</date>
+	<lazy-load>1</lazy-load>
+	<class>GreatBaptistBootstrapThemePlugin</class>
+</version>
