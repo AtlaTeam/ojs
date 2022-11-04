@@ -18,6 +18,4 @@ cypress/screenshots/
 
 # Atla additions.
 .idea
-cache
-public
 html-images
