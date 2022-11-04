@@ -53,3 +53,4 @@
 [submodule "plugins/themes/bootstrap3"]
 	path = plugins/themes/bootstrap3
 	url = https://github.com/pkp/bootstrap3
+	branch = stable-3_3_0
