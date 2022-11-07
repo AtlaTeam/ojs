@@ -3,7 +3,7 @@
 temp
 /files
 /plugins/paymethod/paypal/vendor/
-.htaccess
+#.htaccess
 .project
 .buildpath
 .settings
