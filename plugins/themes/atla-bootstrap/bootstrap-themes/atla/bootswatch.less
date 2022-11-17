@@ -78,12 +78,8 @@ h2.title {
   height: 18px;
   width: 19px;
   content: "";
-  background: url("../../arrow.svg") no-repeat 0 0;
+  background: url("../../../../../../../plugins/themes/atla-bootstrap/arrow.svg") no-repeat 0 0;
   background-size: 16px 19px
-}
-
-.page_issue #_idContainer002 img {
-  max-width: 300px
 }
 
 .navbar-brand {
@@ -141,7 +137,7 @@ h2.title {
 }
 
 aside#sidebar {
-  padding-top: none
+  padding-top: none;
 }
 
 footer p {
@@ -219,6 +215,14 @@ ul#subs-nav {
   padding: 0
 }
 
+._022_indent {
+  margin-left:2em;
+}
+
+._022_top-margin {
+  margin-top:1em;
+}
+
 .Bold, .bold {
   font-weight: bold
 }
@@ -235,6 +239,14 @@ ul#subs-nav {
 .Bold-Caps {
   font-weight: bold;
   text-transform: uppercase
+}
+
+.Figure {font-weight:bold;}
+
+span.hyperlink, span.Hyperlink {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 ._020styles_H1, ._022_TextHeading1 {
@@ -498,15 +510,16 @@ p._020styles_TitleNum, ._022_TitleNum {
 
 p._020styles_Caption, ._022_Caption {
   font-size: .85em;
-  line-height: 1.15em
+  line-height: 1.15em;
+  margin-bottom:1em;
 }
 
 .Medium-Italic {
   font-style: italic
 }
 
-h1._022-Yearbook_Section-Title {
-  border-top: solid 5px;
+h1._022-Yearbook_Section-Title, h1._022_Section-Title {
+  border-top: solid 3px;
   padding-top: 0.3em;
   padding-bottom: 3em;
   border-bottom: solid 1px;
@@ -559,9 +572,15 @@ th._022-Yearbook_Table-Head-Historical {
   border-bottom: 1px solid #808080
 }
 
-table.officers thead {
+table.officers thead, .table-background-dark {
   background-color: #E0E0E0;
 }
+
+.table-background-light {
+  background-color: #F0F0F0;
+}
+
+.Basic-Table.no-border {border:none;}
 
 table.historical-annual-conferences td{
   border: none;
@@ -588,6 +607,21 @@ p._022-Yearbook_Members, p._022-Yearbook_member-institutions {
 p._022-Yearbook_Board-Byline {
   margin-bottom:.8em;
 }
+
+ol.decimal-list {
+  counter-reset: item;
+}
+
+ol.decimal-list li{
+  display:block;
+  margin-bottom:.5em;
+}
+
+ol.decimal-list li:before {
+  content: counters(item, ".")". ";
+  counter-increment: item;
+}
+
 
 
 @media (min-width:768px) {
