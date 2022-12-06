@@ -50,6 +50,11 @@ class GreatBaptistBootstrapThemePlugin extends ThemePlugin {
 			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
 			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
 		}
+
+		// Add "Dev Site" banner.
+		if (Application::get()->getRequest()->getBaseUrl() !== 'https://serials.atla.com') {
+			$this->modifyStyle('bootstrap', ['addLess' => ['styles/development.less']]);
+		}
 	}
 
 	/**

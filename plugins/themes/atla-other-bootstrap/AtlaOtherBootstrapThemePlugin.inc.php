@@ -31,6 +31,11 @@ class AtlaOtherBootstrapThemePlugin extends ThemePlugin {
 		else {
 			$this->modifyStyle("bootstrapTheme-{$subtheme}", ['addLess' => ['styles/cookiepro.less']]);
 		}
+
+		// Add "Dev Site" banner.
+		if (Application::get()->getRequest()->getBaseUrl() !== 'https://serials.atla.com') {
+			$this->modifyStyle('bootstrap', ['addLess' => ['styles/development.less']]);
+		}
 	}
 
 	/**
