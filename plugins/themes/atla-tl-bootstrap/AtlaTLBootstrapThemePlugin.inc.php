@@ -40,7 +40,7 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 		// Handling for Atla subthemes.
 		if ($subtheme === 'atla') {
 			$this->addStyle('child-stylesheet', 'styles/' . $subtheme . '.less');
-			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
+			$this->appendStyles('bootstrap');
 		}
 
 		// Handling for default bootstrap style.
@@ -48,7 +48,23 @@ class AtlaTLBootstrapThemePlugin extends ThemePlugin {
 			$iconFontPath = Application::get()->getRequest()->getBaseUrl() . '/' . $this->getPluginPath() . '/bootstrap/fonts/';
 			$this->addStyle('bootstrap', 'styles/bootstrap.less');
 			$this->modifyStyle('bootstrap', ['addLessVariables' => '@icon-font-path:"' . $iconFontPath . '";']);
-			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
+			$this->appendStyles('bootstrap');
+		}
+	}
+
+	/**
+	 * Tack on additional stylesheets for the given subtheme.
+	 *
+	 * @param string $subtheme
+	 *  The subtheme to modify.
+	 */
+	private function appendStyles($subtheme) {
+		// Styling for cookie banner.
+		$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
+
+		// Styling for dev site banner.
+		if (Application::get()->getRequest()->getBaseUrl() !== 'https://serials.atla.com') {
+			$this->modifyStyle($subtheme, ['addLess' => ['styles/development.less']]);
 		}
 	}
 

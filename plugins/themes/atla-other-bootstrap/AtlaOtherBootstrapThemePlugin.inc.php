@@ -21,15 +21,32 @@ class AtlaOtherBootstrapThemePlugin extends ThemePlugin {
 	public function init() {
 		$this->setParent('bootstrapthreethemeplugin');
 
-		// Override default styles for the "default" subtheme. Cookie Pro styling handled separately.
+		// Override default styles for the "default" subtheme.
 		$subtheme = $this->parent->getOption('bootstrapTheme');
 		if ($subtheme == 'bootstrap3') {
 			$this->addStyle('child-stylesheet', 'styles/atla.less');
-			$this->modifyStyle('bootstrap', ['addLess' => ['styles/cookiepro.less']]);
+			$this->appendStyles('bootstrap');
 		}
 
+		// Modify for all other subthemes.
 		else {
-			$this->modifyStyle("bootstrapTheme-{$subtheme}", ['addLess' => ['styles/cookiepro.less']]);
+			$this->appendStyles("bootstrapTheme-{$subtheme}");
+		}
+	}
+
+	/**
+	 * Tack on additional stylesheets for the given subtheme.
+	 *
+	 * @param string $subtheme
+	 *  The subtheme to modify.
+	 */
+	private function appendStyles($subtheme) {
+		// Styling for cookie banner.
+		$this->modifyStyle($subtheme, ['addLess' => ['styles/cookiepro.less']]);
+
+		// Styling for dev site banner.
+		if (Application::get()->getRequest()->getBaseUrl() !== 'https://serials.atla.com') {
+			$this->modifyStyle($subtheme, ['addLess' => ['styles/development.less']]);
 		}
 	}
 
