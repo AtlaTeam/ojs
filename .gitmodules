@@ -54,3 +54,6 @@
 	path = plugins/themes/bootstrap3
 	url = https://github.com/pkp/bootstrap3
 	branch = stable-3_3_0
+[submodule "plugins/generic/plagiarism"]
+	path = plugins/generic/plagiarism
+	url = https://github.com/pkp/plagiarism.git
